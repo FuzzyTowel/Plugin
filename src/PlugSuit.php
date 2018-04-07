@@ -33,7 +33,7 @@ trait PlugSuit
         $parameters = $before->getParams();
 
         // if it's not void it means we've replaced the return
-        if (!$before->get() instanceof Void) {
+        if (!$before->get() instanceof FoolVoid) {
             $return = $before->get();
         } else {
             switch (count($parameters)) {
@@ -66,7 +66,7 @@ trait PlugSuit
             ->setParams($parameters)
             ->execute();
 
-        if (!$after->get() instanceof \Foolz\Plugin\Void) {
+        if (!$after->get() instanceof \Foolz\Plugin\FoolVoid) {
             return $after->get();
         }
 
@@ -94,7 +94,7 @@ trait PlugSuit
         $parameters = $before->getParams();
 
         // if it's not void it means we've replaced the return
-        if (!$before->get() instanceof \Foolz\Plugin\Void) {
+        if (!$before->get() instanceof \Foolz\Plugin\FoolVoid) {
             $return = $before->get();
         } else {
             $pname = 'p_'.$name;
@@ -128,7 +128,7 @@ trait PlugSuit
             ->setParams($parameters)
             ->execute();
 
-        if (!$after->get() instanceof Void) {
+        if (!$after->get() instanceof FoolVoid) {
             return $after->get();
         }
 
